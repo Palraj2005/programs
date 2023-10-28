@@ -1,0 +1,29 @@
+<html>
+<head>
+<style>
+img {
+cursor: pointer;
+}
+</style>
+</head>
+<body>
+<img id="image1" src="download (2).jpg" alt="Image 1" width="200" height="150">
+<img id="image2" src="https://example.com/image.jpg" alt="Image 2" width="200"
+height="150">
+<script type="text/javascript">
+// Get references to the image elements
+var image1 = document.getElementById("image1");
+var image2 = document.getElementById("image2");
+// Event handler for the first image
+image1.addEventListener("click", function () {
+image1.style.display = "none";
+image2.style.display = "block";
+});
+// Event handler for the second image
+image2.addEventListener("click", function () {
+image1.style.display = "block";
+image2.style.display = "none";
+});
+</script>
+</body>
+</html>

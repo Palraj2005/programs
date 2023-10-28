@@ -1,0 +1,71 @@
+<html>
+<head>
+<title>Calculator</title>
+<script>
+function calculator() {
+var firstnumber = document.getElementById("firstnumber").value;
+var lastnumber = document.getElementById("lastnumber").value;
+var operation = document.getElementById("operation").value;
+document.getElementById("result").innerHTML = calc(firstnumber, lastnumber,
+operation);
+}
+function calc(firstnumber, lastnumber, operation) {
+var result;
+firstnumber = parseInt(firstnumber);
+lastnumber = parseInt(lastnumber);
+switch (operation) {
+case "minimum":
+result = (firstnumber > lastnumber) ? lastnumber : firstnumber;
+if (firstnumber == lastnumber) result = "Both are equal numbers";
+break;
+case "maximum":
+result = (firstnumber < lastnumber) ? lastnumber : firstnumber;
+if (firstnumber == lastnumber) result = "Both are equal numbers";
+break;
+case "subtraction":
+result = firstnumber - lastnumber;
+break;
+case "addition":
+result = firstnumber + lastnumber;
+break;
+case "multiplication":
+result = firstnumber * lastnumber;
+break;
+case "division":
+result = firstnumber / lastnumber;
+break;
+default:
+result = "No operation entered";
+break;
+}
+return (result);
+}
+</script>
+</head>
+<body>
+<form>
+<div>
+<label for="firstnumber">First number</label>
+<input type="text" id="firstnumber"><br><br>
+</div>
+<div>
+<label for="lastnumber">Last number</label>
+<input type="text" id="lastnumber"><br><br>
+</div>
+<label for="operation">Select operation</label><br><br>
+<div>
+<select id="operation" required>
+<option value="">Select option---</option>
+<option value="minimum">minimum</option>
+<option value="maximum">maximum</option>
+<option value="addition">addition</option>
+<option value="division">division</option>
+<option value="multiplication">multiplication</option>
+<option value="subtraction">subtraction</option>
+</select>
+</div>
+<input type="button" value="Calculate" onclick="calculator();">
+<p id="result"></p>
+</form>
+</body>
+</html>
